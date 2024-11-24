@@ -70,9 +70,9 @@ $clases = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <li class="nav-item">
           <a class="nav-link" href="crear_tarea.php">Crear Tarea</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="c_docentes.php">Agregar Estudiante</a>
-        </li>
+        </li> -->
       </ul>
       <a class="nav-link end-0 position-absolute me-4" href="../php/csesion.php">Cerrar sesion</a>
     </div>
