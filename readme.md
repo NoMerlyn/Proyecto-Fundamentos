@@ -18,6 +18,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
 ## Configuración inicial
 
 ### 1. Crear la base de datos
+
 Sigue estos pasos para crear la base de datos:
 
 1. Abre **phpMyAdmin** o tu administrador de base de datos preferido (se recomienda DBeaver).
@@ -27,22 +28,22 @@ Sigue estos pasos para crear la base de datos:
 
 ### 2. Configuración de la conexión a la base de datos
 
-1. Localiza el archivo `cone.php` en la carpeta `php` del proyecto.
-2. Verifica que los datos de conexión son correctos para tu instalación de XAMPP:
+1.  Localiza el archivo `cone.php` en la carpeta `php` del proyecto.
+2.  Verifica que los datos de conexión son correctos para tu instalación de XAMPP:
     ```php
-    <?php
-    $host = 'localhost';
-    $user = 'root'; // Usuario por defecto de MySQL
-    $password = ''; // Contraseña por defecto de XAMPP
-    $database = 'SistemaEducativo';
-
-    $conn = new mysqli($host, $user, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
+       <?php
+    function Conexion(): PDO{
+        $server='localhost';
+        $usuario="usuario";
+        $clave="";
+        try{
+            $con=new PDO("mysql:host=".$server."; dbname=sisedu",$usuario,$clave );
+        }catch(PDOException $e){
+        }
+        return $con;
     }
     ?>
-    ```
+        ```
 
 ---
 
@@ -50,7 +51,7 @@ Sigue estos pasos para crear la base de datos:
 
 1. Abre **XAMPP Control Panel** y asegúrate de iniciar los servicios de **Apache** y **MySQL**.
 2. Copia el proyecto en la carpeta `htdocs` de tu instalación de XAMPP.
-3. Abre tu navegador y navega a: 
+3. Abre tu navegador y navega a:
    ```
    http://localhost/[nombre_de_tu_carpeta]
    ```
@@ -70,6 +71,6 @@ Sigue estos pasos para crear la base de datos:
 
 ## Contribuciones
 
-Si deseas contribuir al proyecto, por favor crea un *fork* y envía un *pull request*. Asegúrate de seguir las buenas prácticas de desarrollo PHP.
+Si deseas contribuir al proyecto, por favor crea un _fork_ y envía un _pull request_. Asegúrate de seguir las buenas prácticas de desarrollo PHP.
 
 ---
