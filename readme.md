@@ -43,7 +43,8 @@ Sigue estos pasos para crear la base de datos:
         return $con;
     }
     ?>
-        ```
+
+    ```
 
 ---
 
